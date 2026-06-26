@@ -1,0 +1,28 @@
+Crée un flyer inspiré de la page d’accueil de ClickNcode, avec une mise en page élégante façon carte de restaurant, mais dédié aux services digitaux premium.
+
+- Identité : ClickNcode, agence digitale premium
+- Style visuel : noir profond / doré brillant, moderne et luxueux, avec du contraste fort, des lignes fines et une typographie claire
+- Format : idéal pour réseaux sociaux (carré ou portrait)
+
+Structure du flyer :
+1. Titre principal : « Carte des prestations ClickNcode » ou « Carte des services premium »
+2. Accroche : phrase courte sur la qualité, la rapidité et l’accompagnement sur mesure
+3. Sections de services avec prix :
+   - Création de site internet : €1900 / €2600 / €3500
+   - Montage vidéo & photo : €800 / €800 / €1300
+   - Boost visibilité : €700 / €800 / €1200
+   - Outils & workflow sur mesure : €900 / €1300 / €500
+   - Agents IA : rapports mail, agent téléphonique, trader IA, solutions sur mesure (sur devis)
+   - Réparation & maintenance : PC à domicile, en entreprise ou à distance (sur devis, intervention dès 39€)
+4. Mention « Paiements flexibles » avec : Stripe, paiement 3x/4x, Klarna, PayPal, CB, virement
+5. Note : « Hébergement et nom de domaine inclus »
+6. Zone contact :
+   - Téléphone : +33 6 38 05 53 68
+   - Email : click.ncode34@gmail.com
+7. Appel à l’action : « Réserve ton projet dès aujourd’hui » ou « Demandez votre devis premium »
+
+Le design doit refléter l’ambiance premium de l’accueil : noir profond, touches dorées, accents blancs et beige, sections bien délimitées, icônes discrètes et une hiérarchie claire des informations.
+
+Ajoute des références à une carte de restaurant : encadrés soignés, intitulés de services comme des plats, prix mis en valeur, tout en adaptant le rendu à une offre de services digitaux.
+
+Fais un rendu visuel prêt pour Instagram, Facebook ou LinkedIn, avec un visuel stylisé et haut de gamme.

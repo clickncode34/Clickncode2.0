@@ -1,0 +1,342 @@
+# 🎨 PROMPT TEMPLATE - PLATEFORME E-COMMERCE LUXURY
+
+## 📋 CONTEXTE & OBJECTIF
+
+Tu es un expert en développement web e-commerce. Je veux créer un site internet professionnel et luxe pour vendre [TYPE_PRODUIT] en ligne.
+
+Le site doit être:
+- ✅ Moderne et élégant (design premium)
+- ✅ Performant (60fps, sans freeze)
+- ✅ Sécurisé (paiements + données)
+- ✅ Responsive (mobile/tablette/desktop)
+- ✅ Sans backend lourd (GitHub Pages friendly)
+- ✅ Paiements sécurisés via Stripe
+
+---
+
+## 🛠️ STACK TECHNOLOGIQUE REQUIS
+
+### Frontend
+- **HTML5** avec structure sémantique
+- **CSS3** avec:
+  - Grid & Flexbox pour layouts
+  - CSS Variables pour theming
+  - Animations cubic-bezier pour fluidité
+  - Media queries responsives
+- **Vanilla JavaScript ES6** (pas de framework lourd)
+  - Pas de jQuery, pas de React
+  - Performances natives optimales
+
+### Hébergement & Paiements
+- **GitHub Pages** (HTTPS automatique, CDN global)
+- **Stripe** pour paiements (buy.stripe.com hosted forms)
+- **Service Worker** pour PWA (offline capability)
+- **No Backend** (site 100% statique)
+
+### Ressources Externes
+- **Google Fonts** (Montserrat + 1 serif pour headings)
+- **Font Awesome** ou SVG icons (léger)
+- **Images optimisées** (WebP si possible, JPEG fallback)
+
+---
+
+## 🎯 ARCHITECTURE GÉNÉRALE
+
+### Structure de Fichiers
+```
+/
+├── index.html          # Page principale (tout en une)
+├── style.css           # Styles master (~2000-2500 lignes)
+├── script.js           # Interactivité (~500-800 lignes)
+├── service-worker.js   # PWA offline support
+├── manifest.json       # PWA metadata
+├── robots.txt          # SEO bot management
+├── sitemap.xml         # URL listing for search engines
+├── SECURITY.md         # Documentation sécurité
+└── images/             # Assets optimisées
+```
+
+### Organisation HTML - Sections
+1. **Header/Navigation** - Logo + menu sticky
+2. **Hero Section** - Banneau attrayant avec CTA
+3. **Produits/Catalog** - Grid responsive
+4. **À Propos/Brand Story** - Positioning premium
+5. **Galerie/Portfolio** - Images de qualité
+6. **Testimonials/Reviews** - Preuve sociale
+7. **Newsletter** - Email signup
+8. **Contact Section** - 3 boutons sociaux + formulaire
+9. **Footer Premium** - 4 colonnes (Brand, Links, Info, Contact)
+
+---
+
+## 🎨 DESIGN & STYLING
+
+### Palette Couleurs (Luxury Theme)
+```css
+--color-primary: #D4AF37;      /* Gold */
+--color-dark: #0F0F0F;         /* Deep black */
+--color-accent: #2A2A2A;       /* Dark gray */
+--color-light: #F5F5F5;        /* Off-white */
+--color-white: #FFFFFF;
+```
+
+### Typographie
+- **Body**: Montserrat (300-400 weight) 16px
+- **Headings**: Serif font (700-900 weight) ou Montserrat bold
+- **Accents**: 12-14px, letterspacing augmenté
+
+### Animations & Transitions
+- ✅ Hover effects fluides (0.2-0.3s)
+- ✅ Page load animations (fade-in, slide-up)
+- ✅ Scroll animations (parallax, fade on scroll)
+- ✅ Particles/Stars (12 max, GPU accelerated)
+- ✅ Cubic-bezier curves pour élégance: `cubic-bezier(0.25, 0.46, 0.45, 0.94)`
+
+### Responsiveness Breakpoints
+```css
+Mobile: < 768px
+Tablet: 768px - 1024px
+Desktop: > 1024px
+Ultra-wide: > 1440px
+```
+
+---
+
+## 💾 FONCTIONNALITÉS REQUISES
+
+### Page Principale (index.html)
+1. **Navigation** - Menu sticky avec logo
+2. **Hero** - Image/vidéo + titre accrocheur + CTA button
+3. **Products Catalog**
+   - Grid 3-4 colonnes (responsive)
+   - Cards: Image + Nom + Prix + Description courte
+   - Hover effect avec "Voir Détails" overlay
+4. **Galerie** - Lightbox clickable (images produits)
+5. **À Propos** - Story de la marque (2-3 paragraphes)
+6. **Reviews/Testimonials** - Slider ou grid avec photos clients
+7. **Contact Section**
+   - 3 boutons sociaux: Facebook, Instagram, TikTok (couleurs respectives)
+   - Formulaire email simple (nom + email + message)
+8. **Footer Premium**
+   - Colonne 1: Logo + Description marque
+   - Colonne 2: Quick Links (Products, About, Contact, FAQ)
+   - Colonne 3: Informations (Horaires, Localisation)
+   - Colonne 4: Contact (Email, Téléphone, Adresse)
+   - Row: Payment methods badges + Copyright
+
+### Interactions JavaScript
+- ✅ Menu hamburger pour mobile
+- ✅ Lightbox gallery (keyboard nav: Esc, arrows)
+- ✅ Smooth scroll navigation
+- ✅ Throttled scroll events (16ms max)
+- ✅ Form validation (email, required fields)
+- ✅ Analytics tracking (optional)
+
+### PWA Features
+- ✅ Service Worker (offline support)
+- ✅ manifest.json (installable app)
+- ✅ Loading spinner/skeleton
+- ✅ Install prompt (optional)
+
+---
+
+## 💳 PAIEMENTS STRIPE
+
+### Implémentation
+- ✅ **JAMAIS** de formulaire de saisie de carte
+- ✅ **Redirection** vers `https://buy.stripe.com/pay/[UNIQUE_ID]`
+- ✅ **Liens uniques** par produit/panier
+- ✅ **Success URL** après paiement
+- ✅ **Webhook** pour confirmations (si backend future)
+
+### Boutons Paiement
+```html
+<a href="https://buy.stripe.com/pay/YOUR_LINK_ID" class="btn-pay">
+  💳 Payer Maintenant
+</a>
+```
+
+### Sécurité
+- ✅ Content-Security-Policy (CSP) whitelist Stripe
+- ✅ HTTPS obligatoire (GitHub Pages auto)
+- ✅ Jamais de données sensibles en cache
+- ✅ X-Frame-Options: DENY (anti-clickjacking)
+
+---
+
+## ⚡ PERFORMANCE REQUIREMENTS
+
+### Optimisations Obligatoires
+1. **Réduire particles** - Max 12 particles actifs
+2. **Throttle scroll events** - 16ms minimum (60fps)
+3. **requestAnimationFrame** - Pour animations fluides
+4. **GPU acceleration** - will-change, transform, backface-visibility
+5. **Lazy loading** - Images load au scroll
+6. **Minify CSS/JS** - Production ready
+7. **Image compression** - Moins de 200KB total images
+8. **Pas de loops infinies** - Vérifier console for warnings
+
+### Cibles Performance
+- ✅ First Contentful Paint < 2s
+- ✅ Time to Interactive < 3s
+- ✅ Lighthouse Score > 85
+- ✅ 60fps constant scrolling
+- ✅ Pas de jank/freeze
+
+---
+
+## 🔒 SÉCURITÉ
+
+### Obligatoire
+- ✅ HTTPS (GitHub Pages force automatiquement)
+- ✅ Content-Security-Policy headers
+- ✅ X-UA-Compatible, X-Content-Type-Options
+- ✅ Referrer-Policy: strict-origin-when-cross-origin
+- ✅ Permissions-Policy (no geolocation/camera/mic)
+- ✅ robots.txt (prevent scraping)
+- ✅ sitemap.xml (SEO)
+
+### À Ajouter (Pages Légales)
+- [ ] Politique de Confidentialité
+- [ ] Mentions Légales (SIRET/SIREN, contact)
+- [ ] Conditions Générales de Vente (CGV)
+- [ ] Politique de Retour
+
+### No Database Risk
+- ✅ Pas de données stockées localement
+- ✅ Paiements = Stripe responsibility (PCI-DSS Level 1)
+- ✅ Pas de backend = pas de SQL injection/hacking
+
+---
+
+## 📱 MOBILE-FIRST DESIGN
+
+### Considérations Mobile
+- ✅ Touch-friendly buttons (min 44px height)
+- ✅ Readable text (16px+ body font)
+- ✅ No hover-only functionality
+- ✅ Hamburger menu for navigation
+- ✅ Single column layouts < 768px
+- ✅ Optimized images for mobile data
+- ✅ Tap gestures for gallery navigation
+
+---
+
+## ✨ FEATURES BONUS (Optional)
+
+- [ ] Dark mode toggle
+- [ ] Multi-language support (FR/EN)
+- [ ] Wishlist/Favorites
+- [ ] Product quick view modal
+- [ ] Customer reviews submission
+- [ ] Email newsletter integration
+- [ ] Live chat (Tidio/Intercom)
+- [ ] Google Analytics
+- [ ] Instagram feed integration
+
+---
+
+## 📝 COMMANDES CLÉS POUR L'IA
+
+### Initialiser le projet
+```
+"Crée un site e-commerce pour [PRODUIT] avec:
+- Design luxury (couleur primaire: [COULEUR])
+- Hébergé sur GitHub Pages
+- Paiements via Stripe
+- Performance optimale (60fps)
+- Sécurité maximum
+- Structure identique à mon template"
+```
+
+### Ajouter une fonctionnalité
+```
+"Ajoute [FEATURE] au site avec:
+- Responsive design
+- Animations fluides
+- Performance optimale"
+```
+
+### Debugger un problème
+```
+"Le site freeze sur mobile. 
+Optimise les performances:
+- Réduis les animations
+- Ajoute du throttling
+- Compresse les images"
+```
+
+---
+
+## 🎯 CHECKLIST PRÉ-DÉPLOIEMENT
+
+- [ ] HTML valide (W3C validator)
+- [ ] CSS valide (no errors)
+- [ ] JavaScript sans console errors
+- [ ] Responsive sur 3 breakpoints (mobile/tablet/desktop)
+- [ ] Paiements Stripe testés
+- [ ] HTTPS fonctionne
+- [ ] Service Worker registered
+- [ ] Images optimisées (< 200KB total)
+- [ ] Animations fluides 60fps
+- [ ] Footer affiche correctement
+- [ ] Formulaire validation OK
+- [ ] Meta tags complètes (OG, Twitter Card)
+
+---
+
+## 📊 EXEMPLE: CONVERSION DU TEMPLATE
+
+Pour adapter ce template à un nouveau produit:
+
+1. **Remplacer le nom**: "Bijoux2luxe" → "[NOUVEAU_SHOP]"
+2. **Remplacer la couleur**: "#D4AF37" → "[COULEUR_MARQUE]"
+3. **Remplacer le produit**: "Colliers/Gourmettes" → "[VOTRE_PRODUIT]"
+4. **Remplacer les images**: Galerie bijoux → Galerie votre produit
+5. **Remplacer les liens Stripe**: buy.stripe.com/old → buy.stripe.com/new
+6. **Remplacer les textes**: Descriptions bijoux → Descriptions votre produit
+7. **Remplacer les couleurs sociales**: (Bleu/Jaune/Cyan) → (Vos couleurs)
+8. **Remplacer le footer**: Infos bijoux → Infos entreprise
+9. **Tester** sur mobile/desktop/paiement
+
+---
+
+## 🚀 DÉPLOIEMENT FINAL
+
+### GitHub Pages Setup
+1. Créer repo GitHub: [USERNAME].github.io
+2. Push tous les fichiers
+3. Settings → Pages → Enable
+4. Custom domain: yoursite.com
+5. Force HTTPS: Coché
+6. Wait 5-10 minutes
+
+### Vérifier Sécurité
+```
+1. Ouvrir: https://yoursite.com
+2. Cadenas 🔒 vert? → OK
+3. Test Stripe payment → OK
+4. Console no errors? → OK
+5. Mobile responsive? → OK
+```
+
+---
+
+## 📞 SUPPORT & MAINTENANCE
+
+- **Bugs sécurité**: Contact GitHub Support
+- **Problèmes Stripe**: https://support.stripe.com
+- **Performance issues**: Vérifier console errors + network tab
+- **Designs updates**: Editer CSS variables pour theming rapide
+
+---
+
+**PRÊT À CRÉER VOTRE SITE? Utilise ce prompt et fournis:**
+1. [TYPE_PRODUIT]: Quel produit vendez-vous?
+2. [COULEUR_PRIMAIRE]: Couleur marque (ex: #FF5733)
+3. [NOM_MARQUE]: Nom de votre entreprise
+4. [DOMAINE]: Votre URL (ex: myshop.fr)
+5. [IMAGES]: 3-5 photos produits de qualité
+6. [STRIPE_LINK]: Votre lien de paiement Stripe
+
+**Profit! Votre site est en ligne en <2 heures!** 🎉

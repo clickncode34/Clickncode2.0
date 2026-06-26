@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.clickncode34.com/sitemap.xml

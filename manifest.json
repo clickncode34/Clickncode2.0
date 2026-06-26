@@ -1,0 +1,16 @@
+{
+  "name": "ClickNcode Premium",
+  "short_name": "ClickNcode",
+  "description": "Agence premium de création web, vidéo, développement et visibilité.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#0F0F0F",
+  "icons": [
+    {
+      "src": "images/manifest-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
